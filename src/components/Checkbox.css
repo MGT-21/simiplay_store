@@ -1,0 +1,4 @@
+.custom-check:checked {
+    background-color: var(--container-bg-color);
+    border: 1px solid var(--theme-color);
+}
