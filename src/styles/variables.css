@@ -5,13 +5,10 @@
     /*colors*/
 
     --black-color: #000;
-    --containers-bg-color: #0e121a;
+    --container-bg-color: #0e121a;
     --theme-color: #F7C846;
-    --theme-color-hover:rgb(231, 184, 54);
+    --theme-color-hover:rgb(218, 173, 52);
     --white-color: #FFFFFF;
-    --input-checbox-color:rgba(255,255,255,0.1);
-    --black-text-color: #000000;
     --input-bg-color: rgba(255,255,255,0.1);
-    --input-bg-color-hover:rgba(255,255,255,0.2);
 
 }
