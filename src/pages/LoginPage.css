@@ -1,3 +1,7 @@
 .ImageContainer{
     background-image: url('../assets/banner1.png');
 }
+
+.bg-custom{
+    background: var(--containers-bg-color);
+}

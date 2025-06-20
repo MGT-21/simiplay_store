@@ -10,7 +10,7 @@ export default function LoginPage() {
     return (
         <div className="row h-100 ">
             <div className="ImageContainer d-none d-md-block col-md-8"></div>
-            <div className="d-flex justify-content-center flex-column col-md-4 bg-dark">
+            <div className="d-flex justify-content-center flex-column col-md-4 bg-custom">
                 <h1 className="text-center mb-4 fw-bold">Login</h1>
                 <form className="px-3">
                     <Input type="email" label="E-mail" placeholder="Digite seu email" />
