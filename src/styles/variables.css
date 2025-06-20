@@ -4,9 +4,10 @@
 
     /*colors*/
 
-    --black-collor: #000;
+    --black-color: #000;
     --containers-bg-color: #0e121a;
     --theme-color: #F7C846;
+    --theme-color-hover:rgb(231, 184, 54);
     --white-color: #FFFFFF;
     --input-checbox-color:rgba(255,255,255,0.1);
     --black-text-color: #000000;

@@ -1,0 +1,17 @@
+.btn-custom {
+    background: var(--theme-color);
+}
+
+.btn-custom:hover , .btn-outline-custom:hover {
+    background-color: var(--theme-color-hover);
+    color: var(--black-color);
+}
+
+
+.btn-outline-custom {
+    border: 2px solid var(--theme-color);
+}
+
+.text-custom {
+    color: var(--theme-color);
+}
