@@ -9,10 +9,10 @@ export default function LoginPage() {
 
     return (
         <div className="row h-100 ">
-            <div className="ImageContainer d-none d-md-block col-md-8"></div>
-            <div className="d-flex justify-content-center flex-column col-md-4 bg-custom px-3">
+            <div className="ImageContainer d-none d-md-block col-md-7"></div>
+            <div className="d-flex justify-content-center flex-column col-md-5 bg-custom px-3">
                 <h1 className="text-center mb-4 fw-bold">Login</h1>
-                <form className="mb-3">
+                <form className="">
                     <Input type="email" label="E-mail" placeholder="Digite seu email" />
                     
                     <Input type="password" label="Senha" placeholder="Digite sua Senha" />
@@ -21,8 +21,7 @@ export default function LoginPage() {
                    
                     <Button type="submit" text="Entrar" />
                 </form>
-                <Button type="link" text="Cadastrar-se" href="/register"/>
-                
+                <p className="d-block text-center mt-3 text-white fw-medium">Não tem conta ? <a className="link-danger" href="/register">Registrar-se</a></p>
             </div>
         </div>
     )
