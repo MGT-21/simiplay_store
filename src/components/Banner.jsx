@@ -3,8 +3,8 @@ import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 import './Banner.css';
 
-import banner1 from '../assets/banner1.png'
-import banner2 from '../assets/banner2.png'
+import banner1 from '../assets/Banner1.jpg'
+import banner2 from '../assets/Banner2.jpg'
 
 export default function Banner() {
     const swiperRef = useRef(null);
@@ -30,18 +30,18 @@ export default function Banner() {
             {/* Additional required wrapper */}
             <div className="swiper-wrapper">
                 {/* Slides */}
-                <div className="swiper-slide"> 
-                    <img src={banner1} alt="slide-1" className='w-100'/>
+                <div className="swiper-slide px-4 px-md-0"> 
+                    <img src={banner1} alt="slide-1" className='w-100 rounded-3'/>
                 </div>
-                <div className="swiper-slide">
-                    <img src={banner2} alt="slide-2" className='w-100'/>
+                <div className="swiper-slide px-4 px-md-0">
+                    <img src={banner2} alt="slide-2" className='w-100 rounded-3'/>
                 </div>
             </div>
             {/* If we need pagination */}
             <div className="swiper-pagination"></div>
-            {/* If we need navigation buttons */}
-            <div className="swiper-button-prev"></div>
-            <div className="swiper-button-next"></div>
+            
+            <div className="swiper-button-prev d-none d-md-block"></div>
+            <div className="swiper-button-next d-none d-md-block"></div>
         </div>
     );
 }
