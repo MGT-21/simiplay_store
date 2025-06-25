@@ -6,6 +6,7 @@ import RegisterPage from './pages/RegisterPage';
 import './styles/variables.css'
 import HomePage from './pages/HomePage';
 
+
 export default function App() {
 
   return (

@@ -1,9 +1,13 @@
 import Header from "../layout/Header"
+import Banner from "../components/Banner"
 
 export default function HomePage() {
 
     return (
-        <Header/>
+        <div>
+            <Header/>
+            <Banner/>
+        </div>
     )
 }
 
