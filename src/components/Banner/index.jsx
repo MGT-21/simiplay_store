@@ -1,10 +1,10 @@
 import { useEffect, useRef } from 'react';
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
-import './Banner.css';
+import './index.css'
 
-import banner1 from '../assets/Banner1.jpg'
-import banner2 from '../assets/Banner2.jpg'
+import banner1 from '../../assets/banner1.jpg'
+import banner2 from '../../assets/banner2.jpg'
 
 export default function Banner() {
     const swiperRef = useRef(null);

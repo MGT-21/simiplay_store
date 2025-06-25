@@ -1,4 +1,4 @@
-import './Checkbox.css'
+import './index.css'
 
 export default function Checkbox({label,id}) {
 

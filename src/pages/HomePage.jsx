@@ -1,4 +1,4 @@
-import Header from "../layout/Header"
+import Header from "../components/Header"
 import Banner from "../components/Banner"
 
 export default function HomePage() {
