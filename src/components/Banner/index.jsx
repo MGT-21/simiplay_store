@@ -30,10 +30,10 @@ export default function Banner() {
             {/* Additional required wrapper */}
             <div className="swiper-wrapper">
                 {/* Slides */}
-                <div className="swiper-slide px-4 px-md-0"> 
+                <div className="swiper-slide px-3 px-md-0"> 
                     <img src={banner1} alt="slide-1" className='w-100 rounded-3'/>
                 </div>
-                <div className="swiper-slide px-4 px-md-0">
+                <div className="swiper-slide px-3 px-md-0">
                     <img src={banner2} alt="slide-2" className='w-100 rounded-3'/>
                 </div>
             </div>
