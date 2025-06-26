@@ -1,3 +1,5 @@
 .ImageContainer{
-    background-image: url('../assets/banner1.png');
+    background-image: url('../../assets/FormBgImg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
