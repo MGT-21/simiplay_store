@@ -1,11 +1,18 @@
 import './index.css'
 
-export default function Input({type,label,placeholder,id}) {
+export default function Input({type = "text",label,placeholder,id, ...rest}) {
 
     return (
         <div className="mb-3">
             <label for="exampleInputEmail1" className="form-label fw-medium">{label}</label>
-            <input type={type} className="form-control custom-input" id={id} aria-describedby="emailHelp" placeholder={placeholder}/>
+
+            <input 
+                type={type} 
+                className="form-control custom-input" 
+                id={id} 
+                placeholder={placeholder}
+                {...rest}
+            />
         </div>
     )
 }

@@ -1,18 +1,41 @@
+import { useForm } from "react-hook-form";
+
 import Input from "../../components/Input"
 import Button from "../../components/Button"
 
 export default function RegisterForm() {
 
+    const {register, handleSubmit } = useForm();
+
+    const onSubmit = (data) => {
+        console.log("Dados recebidos:", data);
+    };
+
     return(
         <div className="d-flex justify-content-center flex-column col-md-5 bg-custom px-3">
             <h1 className="text-center mb-4 fw-bold">Cadastro</h1>
-            <form className="">
-                <Input type="name" label="Nome" placeholder="Digite seu nome" />
-                <Input type="email" label="E-mail" placeholder="Digite seu email" />
-                <Input type="password" label="Senha" placeholder="Digite sua Senha" />
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <Input 
+                    type="name" 
+                    label="Nome" 
+                    placeholder="Digite seu nome" 
+                    {...register("name")}
+                />
+                <Input 
+                    type="email" 
+                    label="E-mail" 
+                    placeholder="Digite seu email" 
+                    {...register("email")}
+                />
+                <Input 
+                    type="password" 
+                    label="Senha" 
+                    placeholder="Digite sua Senha" 
+                    {...register("password")}
+                />
                 <Button type="submit" text="Cadastrar-se" />
             </form>
             <p className="d-block text-center mt-3 text-white fw-medium">Já tem conta ? <a className="link-danger" href="/login">Entrar</a></p>
         </div>
-    )
+    );
 }
