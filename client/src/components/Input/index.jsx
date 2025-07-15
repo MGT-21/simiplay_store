@@ -4,7 +4,8 @@ export default function Input({type = "text",label,placeholder,id, ...rest}) {
 
     return (
         <div className="mb-3">
-            <label for="exampleInputEmail1" className="form-label fw-medium">{label}</label>
+            <label 
+            className="form-label fw-medium">{label}</label>
 
             <input 
                 type={type} 

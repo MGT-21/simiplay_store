@@ -7,7 +7,7 @@ router.get("/", (req, res) => {
   res.json({ message: "API funcionando" });
 });
 
-router.post("/cadastro", authController.register);
+router.post("/register", authController.register);
 router.post("/login", authController.login);
 
 // Aqui você pode adicionar rotas de produtos, pedidos, etc.

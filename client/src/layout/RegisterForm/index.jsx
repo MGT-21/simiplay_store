@@ -7,9 +7,22 @@ export default function RegisterForm() {
 
     const {register, handleSubmit } = useForm();
 
-    const onSubmit = (data) => {
-        console.log("Dados recebidos:", data);
+    const onSubmit = async (data) => {
+        console.log(data);
+        try {
+            const resposta = await fetch("http://localhost:3000/api/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data),
+            });
         
+        const resultado = await resposta.json();
+        console.log("Servidor respondeu", resultado);
+        }catch (erro) {
+            console.error("Erro ao enviar dados:", erro);
+        }
     };
 
     return(
