@@ -9,6 +9,7 @@ export default function RegisterForm() {
 
     const onSubmit = (data) => {
         console.log("Dados recebidos:", data);
+        
     };
 
     return(
