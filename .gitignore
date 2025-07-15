@@ -1,0 +1,47 @@
+# ========================================
+# 🌐 NODE ESTRUTURA GERAL
+# ========================================
+
+# node_modules em qualquer lugar
+**/node_modules/
+
+# Arquivos de log
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# dist do client (Vite/React)
+client/dist/
+client/dist-ssr/
+
+# Arquivos locais temporários
+*.local
+
+# ========================================
+# 🔐 ARQUIVOS SENSÍVEIS
+# ========================================
+
+# .env do back-end
+server/.env
+
+# ========================================
+# 🧠 CONFIGURAÇÕES DE EDITOR
+# ========================================
+
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ========================================
+# ⚙️ OUTROS
+# logs (caso tenha uma pasta logs)
+logs/
