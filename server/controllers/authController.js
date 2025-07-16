@@ -1,7 +1,12 @@
+const bcrypt = require('bcrypt');
 const userRepository = require("../repositories/userRepository");
 
 async function register(req, res) {
   const { name, email, password } = req.body;
+
+  const passwordHash = await bcrypt.hash(password, 10)
+
+  const user = { name, email, password: passwordHash };
 
   // Checa se usuário já existe
   const existingUser = await userRepository.findUserByEmail(email);
@@ -11,7 +16,7 @@ async function register(req, res) {
 
   // Insere usuário
   try {
-    await userRepository.insertUser({ name, email, password });
+    await userRepository.insertUser(user);
     res.status(201).json({ message: "Usuário cadastrado com sucesso" });
   } catch (error) {
     console.error("Erro no cadastro:", error);
@@ -21,10 +26,17 @@ async function register(req, res) {
 
 async function login(req, res) {
   const { email, password } = req.body;
-  const user = await userRepository.findUserByEmail(email);
 
-  if (!user || user.password_hash !== password) {
-    return res.status(401).json({ error: "Credenciais inválidas" });
+  const userDB = await userRepository.findUserByEmail(email);
+
+  if (!userDB) {
+    return res.status(401).send("Usuário não encontrado" );
+  }
+
+  const passwordCompare = await bcrypt.compare(password, userDB.password_hash)
+
+  if(!passwordCompare) {
+    return res.status(401).send("Senha incorreta");
   }
 
   res.status(200).json({ message: "Login bem-sucedido"});
