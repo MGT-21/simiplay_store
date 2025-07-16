@@ -18,6 +18,8 @@ Projeto fullstack para venda de chaves digitais (keys) de jogos. O sistema permi
 - PostgreSQL
 - dotenv
 - pg (driver do PostgreSQL)
+- bcrypt
+- nodemon
 
 ---
 
@@ -25,20 +27,35 @@ Projeto fullstack para venda de chaves digitais (keys) de jogos. O sistema permi
 
 ```bash
 📁 simiplay_store/
-├── client/ # Front-end em React
-│ ├── public/
-│ ├── src/
-│ ├── package.json
-│ └── ...
-├── server/ # Back-end com Express
-│ ├── index.js
-│ ├── database.js
-│ ├── .env
-│ ├── package.json
-│ └── ...
-├── package.json # Scripts unificados (instalação e dev)
+├── client/                # Front-end em React
+│   ├── public/
+│   ├── src/
+│   │   ├── [App.jsx]
+│   │   ├── [Main.jsx]
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── layout/
+│   │   ├── pages/
+│   │   └── styles/
+│   ├── [package.json]
+│   ├── [vite.config.js]
+│   └── [eslint.config.js]
+├── server/                # Back-end com Express
+│   ├── controllers/
+│   │   └── [authController.js]
+│   ├── database/
+│   │   └── [index.js]
+│   ├── repositories/
+│   │   └── [userRepository.js]
+│   ├── routes/
+│   │   └── [api.js]
+│   ├── .env
+│   ├── [index.js]
+│   └── [package.json]
+├── [package.json]        # Scripts unificados (instalação e dev)
 ├── .gitignore
-└── README.md # Este arquivo
+├── .gitattributes
+└── [README.md]           # Este arquivo
 ```
 ---
 
@@ -89,7 +106,6 @@ CREATE TABLE clientes (
 ### 🔐 Proximas melhorias
 
 - Integração com autenticação JWT
-- Hash de senha com bcrypt
 - Tela de catálogo com listagem de games
 - Carrinho de compras
 
