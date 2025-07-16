@@ -10,8 +10,21 @@ export default function LoginForm() {
 
     const { register, handleSubmit } = useForm();
 
-    const onSubmit = (data) => {
-        console.log("Dados recebidos:", data);
+    const onSubmit = async (data) => {
+         try {
+            const resposta = await fetch("http://localhost:3000/api/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data),
+            });
+        
+        const resultado = await resposta.json();
+        console.log("Servidor respondeu", resultado);
+        }catch (erro) {
+            console.error("Erro ao enviar dados:", erro);
+        }
     };
 
     return (

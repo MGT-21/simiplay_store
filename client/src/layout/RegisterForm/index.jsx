@@ -8,7 +8,6 @@ export default function RegisterForm() {
     const {register, handleSubmit } = useForm();
 
     const onSubmit = async (data) => {
-        console.log(data);
         try {
             const resposta = await fetch("http://localhost:3000/api/register", {
                 method: "POST",

@@ -23,11 +23,11 @@ async function login(req, res) {
   const { email, password } = req.body;
   const user = await userRepository.findUserByEmail(email);
 
-  if (!user || user.senha !== password) {
+  if (!user || user.password_hash !== password) {
     return res.status(401).json({ error: "Credenciais inválidas" });
   }
 
-  res.status(200).json({ message: "Login bem-sucedido", userId: user.id });
+  res.status(200).json({ message: "Login bem-sucedido"});
 }
 
 module.exports = {
