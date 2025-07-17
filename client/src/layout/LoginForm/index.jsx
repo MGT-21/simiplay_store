@@ -8,7 +8,7 @@ import './index.css'
 
 export default function LoginForm() {
 
-    const API_URL = import.meta.env.Vite_API_URLL;
+    const API_URL = import.meta.env.VITE_API_URL;
 
     const { register, handleSubmit } = useForm();
 
@@ -23,6 +23,7 @@ export default function LoginForm() {
             });
         
         const resultado = await resposta.json();
+        localStorage.setItem("token",resultado.token)
         console.log("Servidor respondeu", resultado);
         }catch (erro) {
             console.error("Erro ao enviar dados:", erro);
