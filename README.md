@@ -10,7 +10,7 @@ Projeto fullstack para venda de chaves digitais (keys) de jogos. O sistema permi
 - React
 - Vite
 - React Hook Form (RHF)
-- CSS Modules ou Tailwind (dependendo do seu setup)
+- CSS Modules
 
 ### Back-end (`server/`)
 - Node.js
@@ -20,6 +20,7 @@ Projeto fullstack para venda de chaves digitais (keys) de jogos. O sistema permi
 - pg (driver do PostgreSQL)
 - bcrypt
 - nodemon
+- cors
 
 ---
 
@@ -30,32 +31,36 @@ Projeto fullstack para venda de chaves digitais (keys) de jogos. O sistema permi
 ├── client/                # Front-end em React
 │   ├── public/
 │   ├── src/
-│   │   ├── [App.jsx]
-│   │   ├── [Main.jsx]
+│   │   ├── App.jsx
+│   │   ├── Main.jsx
 │   │   ├── assets/
 │   │   ├── components/
 │   │   ├── layout/
 │   │   ├── pages/
 │   │   └── styles/
-│   ├── [package.json]
-│   ├── [vite.config.js]
-│   └── [eslint.config.js]
+│   ├── package.json
+│   ├── vite.config.js
+│   └── eslint.config.js
 ├── server/                # Back-end com Express
-│   ├── controllers/
-│   │   └── [authController.js]
-│   ├── database/
-│   │   └── [index.js]
-│   ├── repositories/
-│   │   └── [userRepository.js]
-│   ├── routes/
-│   │   └── [api.js]
 │   ├── .env
-│   ├── [index.js]
-│   └── [package.json]
-├── [package.json]        # Scripts unificados (instalação e dev)
+│   ├── index.js
+│   ├── package.json
+│   ├── controllers/
+│   │   └── authController.js
+│   ├── database/
+│   │   └── index.js
+│   ├── middleware/
+│   │   └── errorHandler.js
+│   ├── repositories/
+│   │   └── userRepository.js
+│   ├── routes/
+│   │   └── api.js
+│   └── utils/
+│       └── createError.js
+├── package.json           # Scripts unificados (instalação e dev)
 ├── .gitignore
 ├── .gitattributes
-└── [README.md]           # Este arquivo
+└── README.md              # Este arquivo
 ```
 ---
 
