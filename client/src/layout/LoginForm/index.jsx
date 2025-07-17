@@ -8,11 +8,13 @@ import './index.css'
 
 export default function LoginForm() {
 
+    const API_URL = import.meta.env.Vite_API_URLL;
+
     const { register, handleSubmit } = useForm();
 
     const onSubmit = async (data) => {
          try {
-            const resposta = await fetch("http://localhost:3000/api/login", {
+            const resposta = await fetch(`${API_URL}/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

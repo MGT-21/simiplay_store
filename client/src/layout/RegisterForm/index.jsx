@@ -5,11 +5,12 @@ import Button from "../../components/Button"
 
 export default function RegisterForm() {
 
+    const API_URL = import.meta.env.Vite_API_URLL;
     const {register, handleSubmit } = useForm();
 
     const onSubmit = async (data) => {
         try {
-            const resposta = await fetch("http://localhost:3000/api/register", {
+            const resposta = await fetch(`${API_URL}/register`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
