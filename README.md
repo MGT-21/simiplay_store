@@ -65,7 +65,7 @@ Projeto fullstack para venda de chaves digitais (keys) de jogos. O sistema permi
 
 - Node.js instalado
 - PostgreSQL rodando localmente
-- Banco de dados criado com a tabela `clientes`
+- Banco de dados criado com a tabela `usuarios`
 
 ### 1. Clone o repositório
 
@@ -95,11 +95,11 @@ npm run dev
 ### 🧾 SQL de exemplo
 
 ```bash
-CREATE TABLE clientes (
+CREATE TABLE usuarios (
   id SERIAL PRIMARY KEY,
-  nome TEXT NOT NULL,
+  name TEXT NOT NULL,
   email TEXT UNIQUE NOT NULL,
-  senha TEXT NOT NULL
+  password_hash TEXT NOT NULL
 );
 ```
 
