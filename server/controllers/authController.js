@@ -1,45 +1,44 @@
 const bcrypt = require('bcrypt');
 const userRepository = require("../repositories/userRepository");
+const createError = require("../utils/createError")
 
-async function register(req, res) {
-  const { name, email, password } = req.body;
-
-  const passwordHash = await bcrypt.hash(password, 10)
-
-  const user = { name, email, password: passwordHash };
-
-  // Checa se usuário já existe
-  const existingUser = await userRepository.findUserByEmail(email);
-  if (existingUser) {
-    return res.status(400).json({ error: "Usuário já cadastrado" });
-  }
-
-  // Insere usuário
+async function register(req, res, next) {
   try {
+    const { name, email, password } = req.body;
+
+    const passwordHash = await bcrypt.hash(password, 10)
+
+    const user = { name, email, password: passwordHash };
+
+    // Checa se usuário já existe
+    const existingUser = await userRepository.findUserByEmail(email);
+    if (existingUser) {
+      return next(createError("Usuário já cadastrado",400));
+    }
+
     await userRepository.insertUser(user);
     res.status(201).json({ message: "Usuário cadastrado com sucesso" });
-  } catch (error) {
-    console.error("Erro no cadastro:", error);
-    res.status(500).json({ error: "Erro no cadastro" });
+  } catch (error){
+    next(createError("Erro no cadastro", 500));
   }
 }
 
-async function login(req, res) {
+async function login(req, res, next) {
   const { email, password } = req.body;
 
   const userDB = await userRepository.findUserByEmail(email);
 
   if (!userDB) {
-    return res.status(401).send("Usuário não encontrado" );
+    return next(createError("Usuário não encontrado", 401));
   }
 
   const passwordCompare = await bcrypt.compare(password, userDB.password_hash)
 
-  if(!passwordCompare) {
-    return res.status(401).send("Senha incorreta");
+  if (!passwordCompare) {
+    return next(createError("Senha incorreta", 401));
   }
 
-  res.status(200).json({ message: "Login bem-sucedido"});
+  res.status(200).json({ message: "Login bem-sucedido" });
 }
 
 module.exports = {

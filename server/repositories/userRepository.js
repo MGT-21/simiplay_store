@@ -1,17 +1,26 @@
 const { connect } = require("../database");
+const createError = require("../utils/createError");
 
 async function insertUser(user) {
-  const pool = await connect();
-  const sql = "INSERT INTO usuarios (name, email, password_hash) VALUES ($1, $2, $3)";
-  const values = [user.name, user.email, user.password];
-  await pool.query(sql, values);
+  try{
+    const pool = await connect();
+    const sql = "INSERT INTO usuarios (name, email, password_hash) VALUES ($1, $2, $3)";
+    const values = [user.name, user.email, user.password];
+    await pool.query(sql, values);
+  }catch(err) {
+    throw createError("Erro ao inserir usuário",500);
+  }
 }
 
 async function findUserByEmail(email) {
-  const pool = await connect();
-  const sql = "SELECT * FROM usuarios WHERE email = $1";
-  const res = await pool.query(sql, [email]);
-  return res.rows[0];
+  try{
+    const pool = await connect();
+    const sql = "SELECT * FROM usuarios WHERE email = $1";
+    const res = await pool.query(sql, [email]);
+    return res.rows[0];
+  } catch (err) {
+    throw createError("Erro ao buscar usuário",500);
+  }
 }
 
 module.exports = {
