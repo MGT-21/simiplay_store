@@ -10,7 +10,7 @@ export default function RegisterForm() {
 
     const onSubmit = async (data) => {
         try {
-            const resposta = await fetch(`${API_URL}/register`, {
+            const resposta = await fetch(`${API_URL}/auth/register`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

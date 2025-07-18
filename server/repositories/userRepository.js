@@ -14,19 +14,11 @@ async function insertUser(user) {
 
 async function findUserByEmail(email) {
   try{
-    console.log("tentando conectar ou banco...")
     const pool = await connect();
-    console.log("Conexão estabelecida", !!pool)
-
     const sql = "SELECT * FROM usuarios WHERE email = $1";
-    console.log("Executando query:", sql, "com email:", email);
-
     const res = await pool.query(sql, [email]);
-    console.log("Query executada, resultados:", res.rows);
-
     return res.rows[0];
   } catch (error) {
-    console.error("Erro em findUserByEmail:", error);
     throw createError("Erro ao buscar usuário",500);
   }
 }
