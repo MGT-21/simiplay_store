@@ -11,6 +11,8 @@ Projeto fullstack para venda de chaves digitais (keys) de jogos. O sistema permi
 - Vite
 - React Hook Form (RHF)
 - CSS Modules
+- Axios
+- Bootstrap
 
 ### Back-end (`server/`)
 - Node.js
@@ -19,6 +21,7 @@ Projeto fullstack para venda de chaves digitais (keys) de jogos. O sistema permi
 - dotenv
 - pg (driver do PostgreSQL)
 - bcrypt
+- JWT (jsonWebtoken)
 - nodemon
 - cors
 
@@ -50,11 +53,14 @@ Projeto fullstack para venda de chaves digitais (keys) de jogos. O sistema permi
 │   ├── database/
 │   │   └── index.js
 │   ├── middleware/
+│   │   ├── authenticateToken.js
 │   │   └── errorHandler.js
 │   ├── repositories/
 │   │   └── userRepository.js
 │   ├── routes/
-│   │   └── api.js
+│   │   ├── authRoutes.js
+│   │   ├── index.js
+│   │   └── userRoutes.js
 │   └── utils/
 │       └── createError.js
 ├── package.json           # Scripts unificados (instalação e dev)
@@ -89,6 +95,7 @@ npm run install-all
 ```bash
 PORT=3000
 CONNECTION_STRING=postgresql://usuario:senha@localhost:5432/nome_do_banco
+JWT_SECRET=sua_chave_secreta
 ```
 
 ### 4. Rode o projeto completo 
@@ -110,7 +117,6 @@ CREATE TABLE usuarios (
 
 ### 🔐 Proximas melhorias
 
-- Integração com autenticação JWT
 - Tela de catálogo com listagem de games
 - Carrinho de compras
 
