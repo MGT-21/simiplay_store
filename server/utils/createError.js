@@ -1,7 +1,7 @@
 function createError(message, status) {
-  const err = new Error(message);
-  err.status = status;
-  return err;
+  const error = new Error(message);
+  error.status = status;
+  return error;
 }
 
 module.exports = createError;

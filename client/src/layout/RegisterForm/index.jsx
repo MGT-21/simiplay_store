@@ -5,7 +5,7 @@ import Button from "../../components/Button"
 
 export default function RegisterForm() {
 
-    const API_URL = import.meta.env.Vite_API_URL;
+    const API_URL = import.meta.env.VITE_API_URL;
     const {register, handleSubmit } = useForm();
 
     const onSubmit = async (data) => {

@@ -11,7 +11,7 @@ router.get('/profile', (req, res, next) => {
       message: `Bem-vindo, ${req.user.email}`,
       user: req.user,
     });
-  } catch (err) {
+  } catch (error) {
     next(createError('Erro ao buscar perfil', 500));
   }
 });
