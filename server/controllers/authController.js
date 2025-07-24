@@ -19,7 +19,6 @@ async function register(req, res, next) {
     await userRepository.insertUser(user);
     res.status(201).json({ message: "Usuário cadastrado com sucesso" });
   } catch (error) {
-    console.error("Erro no login", error);
     next(createError("Erro no cadastro", 500));
   }
 }
@@ -45,9 +44,7 @@ async function login(req, res, next) {
       process.env.JWT_SECRET,
       { expiresIn: '1d' }
     );
-
     res.status(200).json({ message: "Login bem-sucedido" });
-    return res.json({ token })
   } catch (error) {
     next(createError("Erro no login", 401))
   }

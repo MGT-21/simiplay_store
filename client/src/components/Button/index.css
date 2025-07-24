@@ -1,8 +1,0 @@
-.btn-custom {
-    background: var(--theme-color);
-}
-
-.btn-custom:hover {
-    background-color: var(--theme-color-hover);
-    color: var(--black-color);
-}
