@@ -1,7 +1,7 @@
-const express = require('express');
-const cors = require('cors');
-const apiRouter = require('./routes');
-const errorHandler = require('./middleware/errorHandler');
+import express from 'express';
+import cors from 'cors';
+import apiRouter from './routes';
+import errorHandler from './middleware/errorHandler';
 
 const app = express();
 

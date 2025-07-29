@@ -1,7 +1,9 @@
-const { connect } = require("../database");
-const createError = require("../utils/createError");
+import { connect } from '../database';
+import createError from '../utils/createError';
 
-async function insertUser(user) {
+import { UserFromDB } from '../types/user'
+
+export async function insertUser(user: UserFromDB): Promise<void> {
   try{
     const pool = await connect();
     const sql = "INSERT INTO usuarios (name, email, password_hash) VALUES ($1, $2, $3)";
@@ -12,7 +14,7 @@ async function insertUser(user) {
   }
 }
 
-async function findUserByEmail(email) {
+export async function findUserByEmail(email: string) {
   try{
     const pool = await connect();
     const sql = "SELECT * FROM usuarios WHERE email = $1";
@@ -22,8 +24,3 @@ async function findUserByEmail(email) {
     throw createError("Erro ao buscar usuário",500);
   }
 }
-
-module.exports = {
-  insertUser,
-  findUserByEmail,
-};

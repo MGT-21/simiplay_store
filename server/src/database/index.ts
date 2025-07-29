@@ -1,10 +1,12 @@
-require("dotenv").config();
-const { Pool } = require("pg");
-const createError = require("../utils/createError");
+import dotenv from 'dotenv'
+dotenv.config();
 
-let pool;
+import { Pool } from 'pg';
+import createError from '../utils/createError';
 
-async function connect() {
+let pool: Pool | null = null;
+
+export async function connect(): Promise<Pool> {
   if (pool) return pool;
 
   try {
@@ -24,5 +26,3 @@ async function connect() {
     throw createError("Erro ao conectar ao banco de dados", 500);
   }
 }
-
-module.exports = { connect };

@@ -1,8 +1,7 @@
-const express = require('express');
-const createError = require('../utils/createError');
-
-const authRoutes = require('./authRoutes');
-const userRoutes = require('./userRoutes');
+import express from 'express';
+import createError from '../utils/createError';
+import authRoutes from './authRoutes';
+import userRoutes from './userRoutes';
 
 
 const router = express.Router();
@@ -19,4 +18,4 @@ router.use((req, res, next) => {
   next(createError('Endereço não encontrado', 400));
 });
 
-module.exports = router;
+export default router;
