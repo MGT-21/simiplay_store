@@ -1,7 +1,4 @@
-import { Menu, Gamepad, Gift, LayoutGrid, Joystick, Gamepad2, Square, Monitor, ChevronDown, ShoppingCart, Search, ArrowLeft, LogIn } from "lucide-react";
-
-
-import LogoImg from '@/assets/Logo-simi 2-bg-white.png'
+import { Menu, Gamepad, Gift, LayoutGrid, Joystick, Gamepad2, Square, Monitor, ChevronDown } from "lucide-react";
 
 import {
   Sheet,
@@ -18,19 +15,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
-import { Input } from "../ui/input";
 
-
-import { useState } from "react";
-
-export default function Header() {
-
-  const [searchOpen, setSearchOpen] = useState(false);
-
-  return (
-    <header className="flex items-center justify-between px-3 py-2 bg-accent">
-      <div className="flex items-center gap-1">
-        <Sheet>
+export default function NavMenu(){
+  return(
+    <Sheet>
           <SheetTrigger asChild>
             <button className="p-1">
               <Menu className="h-8 w-8" />
@@ -78,44 +66,6 @@ export default function Header() {
             </nav>
           </SheetContent>
         </Sheet>
-        <a className="flex items-center gap-1" href="">
-          <img src={LogoImg} alt="" className="w-11" />
-          SIMIPLAY
-        </a>
-      </div>
-      <div className="flex gap-2 items-center">
-        <button
-          className="p-2"
-          onClick={() => setSearchOpen(true)}
-        >
-          <Search />
-        </button>
-
-        <button className="bg-gray-700 p-1.5 rounded-md flex gap-1">
-          <ShoppingCart/>
-          {0}
-        </button>
-        <a href="" className="p-1.5">
-          <LogIn/> 
-
-        </a>
-      </div>
-
-      {searchOpen && (
-        <div className="fixed top-0 left-0 w-full z-50 flex items-center gap-2 bg-accent px-3 py-2">
-          <button
-            onClick={() => setSearchOpen(false)}
-            className="p-2 rounded"
-          >
-            <ArrowLeft />
-          </button>
-          <Input className=""/>
-          <button className="p-2">
-            <Search />
-          </button>
-        </div>
-      )}
-
-    </header>
   )
+
 }

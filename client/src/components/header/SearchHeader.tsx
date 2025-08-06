@@ -1,0 +1,26 @@
+import { Input } from "../ui/input";
+
+import { ArrowLeft, Search } from "lucide-react"
+
+interface SearchHeaderProps {
+  onClose: () => void;
+}
+
+export default function SearchHeader({ onClose }: SearchHeaderProps) {
+
+  return (
+
+    <div className="fixed top-0 left-0 w-full z-50 flex items-center gap-2 bg-accent px-3 py-2">
+      <button
+        onClick={onClose}
+        className="p-2 rounded"
+      >
+        <ArrowLeft />
+      </button>
+      <Input className="" />
+      <button className="p-2">
+        <Search />
+      </button>
+    </div>
+  )
+}
