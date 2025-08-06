@@ -1,4 +1,5 @@
-import { Menu, Gamepad, Gift, LayoutGrid, Joystick, Gamepad2, Square, Monitor, ChevronDown, ShoppingCart } from "lucide-react";
+import { Menu, Gamepad, Gift, LayoutGrid, Joystick, Gamepad2, Square, Monitor, ChevronDown, ShoppingCart, Search, ArrowLeft } from "lucide-react";
+
 
 import LogoImg from '@/assets/Logo-simi 2-bg-white.png'
 
@@ -7,7 +8,7 @@ import {
   SheetContent,
   SheetHeader,
   SheetTitle,
-  SheetTrigger,
+  SheetTrigger
 } from "@/components/ui/sheet"
 
 import {
@@ -17,7 +18,15 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
+import { Input } from "../ui/input";
+
+
+import { useState } from "react";
+
 export default function Header() {
+
+  const [searchOpen, setSearchOpen] = useState(false);
+
   return (
     <header className="flex items-center justify-between px-3 py-2 bg-accent">
       <div className="flex items-center gap-2">
@@ -75,7 +84,29 @@ export default function Header() {
         </a>
       </div>
       <div className="flex gap-2 items-center">
+        <button
+          className="p-2"
+          onClick={() => setSearchOpen(true)}
+        >
+          <Search />
+        </button>
       </div>
+
+      {searchOpen && (
+        <div className="fixed top-0 left-0 w-full z-50 flex items-center gap-2 bg-accent px-3 py-2">
+          <button
+            onClick={() => setSearchOpen(false)}
+            className="p-2 rounded"
+          >
+            <ArrowLeft />
+          </button>
+          <Input className=""/>
+          <button className="p-2">
+            <Search />
+          </button>
+        </div>
+      )}
+
     </header>
   )
 }
