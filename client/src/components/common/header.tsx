@@ -1,4 +1,4 @@
-import { Menu, Gamepad, Gift, LayoutGrid, Joystick, Gamepad2, Square, Monitor, ChevronDown, ShoppingCart, Search, ArrowLeft } from "lucide-react";
+import { Menu, Gamepad, Gift, LayoutGrid, Joystick, Gamepad2, Square, Monitor, ChevronDown, ShoppingCart, Search, ArrowLeft, LogIn } from "lucide-react";
 
 
 import LogoImg from '@/assets/Logo-simi 2-bg-white.png'
@@ -29,7 +29,7 @@ export default function Header() {
 
   return (
     <header className="flex items-center justify-between px-3 py-2 bg-accent">
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-1">
         <Sheet>
           <SheetTrigger asChild>
             <button className="p-1">
@@ -95,6 +95,10 @@ export default function Header() {
           <ShoppingCart/>
           {0}
         </button>
+        <a href="" className="p-1.5">
+          <LogIn/> 
+
+        </a>
       </div>
 
       {searchOpen && (
