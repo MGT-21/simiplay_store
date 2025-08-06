@@ -90,6 +90,11 @@ export default function Header() {
         >
           <Search />
         </button>
+
+        <button className="bg-gray-700 p-1.5 rounded-md flex gap-1">
+          <ShoppingCart/>
+          {0}
+        </button>
       </div>
 
       {searchOpen && (
