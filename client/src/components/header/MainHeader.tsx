@@ -19,7 +19,7 @@ export default function MainHeader({ onSearchClick }: MainHeaderProps) {
       </div>
       <div className="flex gap-3 items-center">
         <button className="p-2" onClick={onSearchClick}>
-          <Search />
+          <Search className="size-5.5"/>
         </button>
         <CartButton/>
         <LoginButton/>

@@ -1,5 +1,5 @@
 import {
-  Menu,
+  AlignJustify,
   Gamepad,
   Gift,
   LayoutGrid,
@@ -30,7 +30,7 @@ export default function NavMenu() {
     <Sheet>
       <SheetTrigger asChild>
         <button className="p-1">
-          <Menu className="h-8 w-8" />
+          <AlignJustify className="size-6" />
         </button>
       </SheetTrigger>
       <SheetContent side="left">

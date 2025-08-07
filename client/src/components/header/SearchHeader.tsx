@@ -10,11 +10,11 @@ export default function SearchHeader({ onClose }: SearchHeaderProps) {
   return (
     <div className="fixed top-0 left-0 w-full z-50 flex items-center gap-2 bg-accent px-3 py-2">
       <button onClick={onClose} className="p-2 rounded">
-        <ArrowLeft />
+        <ArrowLeft className="size-5.5"/>
       </button>
-      <Input className="" />
+      <Input />
       <button className="p-2">
-        <Search />
+        <Search className="size-5.5"/>
       </button>
     </div>
   );
