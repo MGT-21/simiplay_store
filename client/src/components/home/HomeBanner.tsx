@@ -31,7 +31,7 @@ export default function HomeBanner() {
   }, [api]);
 
   return (
-    <div className="max-w-[400px] mx-auto mt-12">
+    <div className="max-w-[400px] mx-auto mt-26">
       <Carousel className="" setApi={setApi}>
         <CarouselContent className="">
           <CarouselItem className="">
