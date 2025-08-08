@@ -9,7 +9,7 @@ import {
 
 import { useState, useRef, useEffect } from "react";
 
- export default function MyDropDownMenu() {
+ export default function MyDropDownItem() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
   const [maxHeight, setMaxHeight] = useState<string>("0px");
@@ -31,7 +31,7 @@ import { useState, useRef, useEffect } from "react";
     <div>
       <button
         className={`flex gap-4 font-bold py-3 px-3 cursor-pointer w-full rounded-md transition-all items-center 
-        mb-4 ${
+         ${
           dropdownOpen ? "bg-primary" : ""
         }`}
         onClick={toggleDisplay}
@@ -53,9 +53,9 @@ import { useState, useRef, useEffect } from "react";
             overflow: "hidden",
             transition: "max-height 0.3s ease-in-out",
           }}
-          className="grid text-sm grid-cols-1 gap-2 px-1"
+          className="grid text-sm grid-cols-1 gap-3 px-1t-4"
         >
-          <a href="" className="flex gap-2 px-3 items-center">
+          <a href="" className="flex gap-2 px-3 items-center pt-4">
             <Monitor className="size-4" />
             PC
           </a>

@@ -1,16 +1,10 @@
-import {
-  AlignJustify,
-  Gamepad,
-  Gift,
-} from "lucide-react";
+import { AlignJustify, Ellipsis, Gamepad, Gift, Star } from "lucide-react";
 
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
-import MyDropDownMenu from "../ui/my-dropdown-menu";
+import MyDropDownItem from "../ui/my-dropdown-item";
+import MyItem from "../ui/my-item-link";
+import { Separator } from "../ui/separator";
 
 export default function NavMenu() {
   return (
@@ -21,23 +15,25 @@ export default function NavMenu() {
         </button>
       </SheetTrigger>
       <SheetContent side="left" className="max-w-[300px]">
-        <nav className=" flex flex-col gap-3 ">
-          <a
-            href="#"
-            className="flex gap-4 font-bold py-3 px-3 rounded"
-          >
-            <Gamepad />
+        <nav className=" flex flex-col gap-2 ">
+          <MyItem>
+            <Star className="size-5.5"/>
+            Destaques
+          </MyItem>
+          <Separator/>
+          <MyItem>
+            <Gamepad className="size-5.5"/>
             Jogos
-          </a>
-
-          <a
-            href="#"
-            className="flex gap-4 font-bold py-3 px-3 rounded"
-          >
+          </MyItem>
+          <MyItem>
             <Gift />
             Gift Cards
-          </a>
-          <MyDropDownMenu/>
+          </MyItem>
+          <MyDropDownItem />
+          <MyItem>
+            <Ellipsis className="size-5.5"/>
+            Sobre
+          </MyItem>
         </nav>
       </SheetContent>
     </Sheet>
