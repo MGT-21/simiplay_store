@@ -2,28 +2,15 @@ import {
   AlignJustify,
   Gamepad,
   Gift,
-  LayoutGrid,
-  Joystick,
-  Gamepad2,
-  Square,
-  Monitor,
-  ChevronDown,
 } from "lucide-react";
 
 import {
   Sheet,
   SheetContent,
-  SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import MyDropDownMenu from "../ui/my-dropdown-menu";
 
 export default function NavMenu() {
   return (
@@ -33,14 +20,11 @@ export default function NavMenu() {
           <AlignJustify className="size-6" />
         </button>
       </SheetTrigger>
-      <SheetContent side="left">
-        <SheetHeader>
-          <SheetTitle></SheetTitle>
-        </SheetHeader>
-        <nav className=" flex flex-col gap-4 px-4">
+      <SheetContent side="left" className="max-w-[300px]">
+        <nav className=" flex flex-col gap-3 ">
           <a
             href="#"
-            className="flex gap-2 font-bold hover:bg-accent p-2 rounded"
+            className="flex gap-4 font-bold py-3 px-3 rounded"
           >
             <Gamepad />
             Jogos
@@ -48,36 +32,12 @@ export default function NavMenu() {
 
           <a
             href="#"
-            className="flex gap-2 font-bold hover:bg-accent p-2 rounded"
+            className="flex gap-4 font-bold py-3 px-3 rounded"
           >
             <Gift />
             Gift Cards
           </a>
-          <DropdownMenu>
-            <DropdownMenuTrigger className="flex gap-2 font-bold hover:bg-accent p-2 rounded items-center">
-              <LayoutGrid />
-              Plataformas
-              <ChevronDown className="w-4.5" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-3xs">
-              <DropdownMenuItem>
-                <Joystick />
-                Nintendo
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Gamepad2 />
-                Xbox
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Square />
-                Playstation
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Monitor />
-                PC
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <MyDropDownMenu/>
         </nav>
       </SheetContent>
     </Sheet>
