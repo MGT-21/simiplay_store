@@ -5,8 +5,6 @@ import jwt from 'jsonwebtoken';
 import {insertUser, findUserByEmail} from '../repositories/userRepository';
 import createError from '../utils/createError';
 
-
-
 export async function register(req: Request, res:Response, next: NextFunction) {
   try {
     const { name, email, password } = req.body;
@@ -39,13 +37,14 @@ export async function login(req: Request, res:Response, next: NextFunction) {
     if (!passwordCompare) {
       return next(createError("Senha incorreta", 401));
     }
-
+    
     const token = jwt.sign(
-      { id: userDB.id, email: userDB.email },
+      { id: userDB.id, name:userDB.name, email: userDB.email },
       process.env.JWT_SECRET as string,
       { expiresIn: '1d' }
     );
-    res.status(200).json({ message: "Login bem-sucedido" });
+
+    res.status(200).json({ token,message: "Login bem-sucedido" });
   } catch (error) {
     next(createError("Erro no login", 401))
   }

@@ -36,8 +36,8 @@ async function login(req, res, next) {
         if (!passwordCompare) {
             return next((0, createError_1.default)("Senha incorreta", 401));
         }
-        const token = jsonwebtoken_1.default.sign({ id: userDB.id, email: userDB.email }, process.env.JWT_SECRET, { expiresIn: '1d' });
-        res.status(200).json({ message: "Login bem-sucedido" });
+        const token = jsonwebtoken_1.default.sign({ id: userDB.id, name: userDB.name, email: userDB.email }, process.env.JWT_SECRET, { expiresIn: '1d' });
+        res.status(200).json({ token, message: "Login bem-sucedido" });
     }
     catch (error) {
         next((0, createError_1.default)("Erro no login", 401));

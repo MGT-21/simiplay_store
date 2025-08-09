@@ -38,6 +38,11 @@ export function LoginForm({
 
       const response = await axios.post(`${API_URL}/auth/login`, values);
       console.log('Usuário logou com sucesso:', response.data);
+      
+      if(response.data.token){
+        localStorage.setItem('token', response.data.token);
+        window.location.href = '/'
+      }
     } catch (error: any) {
       if (axios.isAxiosError(error)) {
         console.error('Erro de API:', error.response?.data || error.message);
