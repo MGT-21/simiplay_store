@@ -9,6 +9,7 @@ export default function mainLayout({ children }: HomeLayoutProps) {
     <div>
       <Header />
       {children}
+      
     </div>
   );
 }

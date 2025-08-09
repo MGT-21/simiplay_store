@@ -31,47 +31,43 @@ export default function HomeBanner() {
   }, [api]);
 
   return (
-    <div className="max-w-[400px] mx-auto mt-26">
+    <div className="md:max-w-[800] lg:max-w-[1000px] xl:max-w-[1200px] mt-20 xl:mt-30 items-center">
       <Carousel className="" setApi={setApi}>
         <CarouselContent className="">
           <CarouselItem className="">
-            <div className="px-5">
-              <img
-                src={Banner1}
-                alt="Promoção"
-                className=" h-auto object-cover rounded-md"
-              />
-            </div>
+            <img
+              src={Banner1}
+              alt="Promoção"
+              className=" h-auto object-cover rounded-md"
+            />
           </CarouselItem>
           <CarouselItem className="">
-            <div className="px-5">
-              <img
-                src={Banner1}
-                alt="Promoção"
-                className=" h-auto object-cover rounded-md"
-              />
-            </div>
+            <img
+              src={Banner1}
+              alt="Promoção"
+              className=" h-auto object-cover rounded-md"
+            />
           </CarouselItem>
           <CarouselItem className="">
-            <div className="px-5">
-              <img
-                src={Banner1}
-                alt="Promoção"
-                className=" h-auto object-cover rounded-md"
-              />
-            </div>
+            <img
+              src={Banner1}
+              alt="Promoção"
+              className=" h-auto object-cover rounded-md"
+            />
           </CarouselItem>
         </CarouselContent>
-        <div className="relative">
-          <CarouselPrevious className=" left-30 top-6" />
-          <CarouselNext className=" right-30 top-6" />
+        <div className="absolute left-1/3 right-1/3 mt-7">
+          <CarouselPrevious/>
+          <CarouselNext />
         </div>
       </Carousel>
-      <div className="flex justify-center gap-2 mt-5 items-center">
+      <div className="flex justify-center gap-2 mt-6 items-center">
         {Array.from({ length: count }).map((_, index) => (
           <span
             key={index}
-            className={`h-2 w-2 flex rounded-full transition-all duration-300 ${current === index + 1 ? 'bg-blue-500 w-4 h-2' : 'bg-gray-400'
+            className={`h-2 w-2 flex rounded-full transition-all duration-300 ${current === index + 1
+                ? "bg-primary w-5 h-2 border-1"
+                : "bg-white border-1"
               }`}
           />
         ))}
