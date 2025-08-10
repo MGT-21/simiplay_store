@@ -2,7 +2,7 @@ import NavMenu from "./NavMenu";
 import CartButton from "./CartButton";
 import Logo from "./Logo";
 
-import { Avatar, AvatarFallback} from "@/components/ui/avatar";
+import UserProfileBt from "./UserProfileBt";
 
 import { getUser } from "@/hooks/userAuth";
 
@@ -29,11 +29,9 @@ export default function MainHeader({ onSearchClick }: MainHeaderProps) {
         </button>
         <CartButton />
         {user ? (
-          <Avatar>
-            <AvatarFallback>
-              {user?.name ? user.name.charAt(0) : ""}
-            </AvatarFallback>
-          </Avatar>
+          <UserProfileBt name={user.name? user.name : ""}>
+            {user.name ? user.name.charAt(0) : ""}
+          </UserProfileBt>
         ) : (
           <LoginButton />
         )}
