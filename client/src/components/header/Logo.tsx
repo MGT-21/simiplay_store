@@ -1,4 +1,4 @@
-import LogoImg from "@/assets/Logo-simi 2-bg-white.png";
+import LogoImg from "@/assets/Group 4 v4.png";
 
 export default function Logo() {
   return (

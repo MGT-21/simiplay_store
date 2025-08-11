@@ -8,7 +8,7 @@ interface SearchHeaderProps {
 
 export default function SearchHeader({ onClose }: SearchHeaderProps) {
   return (
-    <div className="fixed top-0 left-0 w-full z-50 flex items-center gap-2 bg-zinc-900 px-3 py-2">
+    <div className="fixed top-0 left-0 w-full z-50 flex items-center gap-3 bg-zinc-900 px-3 py-2">
       <button onClick={onClose} className="p-2 rounded">
         <ArrowLeft className="size-5.5"/>
       </button>
