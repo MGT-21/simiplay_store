@@ -38,8 +38,6 @@ export function RegisterForm({
     try {
       const API_URL = import.meta.env.VITE_API_URL;
       const { confirmPassword, ...cleanData } = values;
-
-
       const response = await axios.post(`${API_URL}/auth/register`, cleanData);
       console.log('Usuário registrado com sucesso:', response.data);
     } catch (error) {
@@ -49,6 +47,7 @@ export function RegisterForm({
         console.error('Erro desconhecido:', error);
       }
     }
+     form.reset()
   }
     return (
       <Form {...form}>

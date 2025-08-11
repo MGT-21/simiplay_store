@@ -37,7 +37,6 @@ export function LoginForm({
 
       const response = await axios.post(`${API_URL}/auth/login`, values);
       console.log("Usuário logou com sucesso:", response.data);
-
       if (response.data.token) {
         localStorage.setItem("token", response.data.token);
         window.location.href = "/";
@@ -49,6 +48,7 @@ export function LoginForm({
         console.error("Erro desconhecido:", error);
       }
     }
+     form.reset()
   }
 
   return (
