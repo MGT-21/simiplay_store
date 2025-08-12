@@ -43,13 +43,13 @@ export function RegisterForm({
       const API_URL = import.meta.env.VITE_API_URL;
       const { confirmPassword, ...cleanData } = values;
       const response = await axios.post(`${API_URL}/auth/register`, cleanData);
-      console.log('API', response.data);
+      console.log('API:', response.data);
       showAlert("Cadastro realizado com sucesso", true);
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        console.error('API', error.response?.data || error.message);
+        console.error('API:', error.response?.data || error.message);
       } else {
-        console.error('API', error);
+        console.error('API:', error);
         showAlert("Ocorreu um erro inesperado, tente novamente mais tarde", false);
       }
     }
