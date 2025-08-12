@@ -19,10 +19,13 @@ import { loginSchema } from "@/lib/zod-schemas";
 import type { LoginSchemaType } from "@/lib/zod-schemas";
 import axios from "axios";
 
+import { useAlert } from "@/components/ui/AlertContext";
+
 export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"form">) {
+  const { showAlert } = useAlert();
   const form = useForm<LoginSchemaType>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
@@ -36,19 +39,22 @@ export function LoginForm({
       const API_URL = import.meta.env.VITE_API_URL;
 
       const response = await axios.post(`${API_URL}/auth/login`, values);
-      console.log("Usuário logou com sucesso:", response.data);
+      console.log("API:", response.data);
+
       if (response.data.token) {
         localStorage.setItem("token", response.data.token);
         window.location.href = "/";
       }
     } catch (error: any) {
       if (axios.isAxiosError(error)) {
-        console.error("Erro de API:", error.response?.data || error.message);
+        console.error("API:", error.response?.data || error.message);
+        showAlert("Email ou senha incorretos", false);
       } else {
-        console.error("Erro desconhecido:", error);
+        console.error("API:", error);
+        showAlert("Ocorreu um erro inesperado, tente novamente mais tarde", false);
       }
     }
-     form.reset()
+     form.reset() 
   }
 
   return (
