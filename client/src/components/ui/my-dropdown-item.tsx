@@ -30,9 +30,9 @@ import { useState, useRef, useEffect } from "react";
   return (
     <div>
       <button
-        className={`flex gap-4 font-bold py-3 px-3 cursor-pointer w-full rounded-md transition-all items-center 
+        className={`flex gap-4 xl:gap-2 font-bold py-3 px-3 cursor-pointer w-full rounded-md transition-all items-center 
          ${
-          dropdownOpen ? "bg-primary" : ""
+          dropdownOpen ? "bg-primary xl:bg-transparent" : ""
         }`}
         onClick={toggleDisplay}
         
@@ -53,7 +53,7 @@ import { useState, useRef, useEffect } from "react";
             overflow: "hidden",
             transition: "max-height 0.3s ease-in-out",
           }}
-          className="grid text-sm grid-cols-1 gap-3 px-1t-4"
+          className="grid text-sm grid-cols-1 gap-3 px-1t-4 xl:absolute xl:bg-accent xl:mt-1 rounded-md xl:w-50 xl:pl-2"
         >
           <a href="" className="flex gap-2 px-3 items-center pt-4">
             <Monitor className="size-4" />
@@ -67,7 +67,7 @@ import { useState, useRef, useEffect } from "react";
             <Gamepad2 className="size-4" />
             Xbox
           </a>
-          <a href="" className="flex gap-2 px-3 items-center">
+          <a href="" className="flex gap-2 px-3 items-center pb-4">
             <Square className="size-4" />
             Playstation
           </a>
