@@ -1,4 +1,4 @@
-import Banner1 from "@/assets/banner-1.png";
+import Banner1 from "@/assets/banner-2.png";
 
 import * as React from "react";
 
